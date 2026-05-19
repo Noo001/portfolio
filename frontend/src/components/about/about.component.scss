@@ -1,0 +1,105 @@
+@import '../../styles.scss';
+
+.about {
+  background: $light;
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .about-info {
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .lead {
+      font-size: 1.125rem;
+      color: $primary;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: $gray;
+      margin-bottom: 24px;
+      line-height: 1.8;
+    }
+
+    .experience-badge {
+      background: linear-gradient(135deg, $primary, $secondary);
+      padding: 16px 24px;
+      border-radius: 12px;
+      text-align: center;
+      margin: 24px 0;
+
+      .years {
+        font-size: 2rem;
+        font-weight: 700;
+        color: white;
+        display: block;
+      }
+
+      .text {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.875rem;
+      }
+    }
+
+    .highlights {
+      .highlight-item {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+        strong {
+          color: $dark;
+        }
+      }
+    }
+  }
+
+  .tech-stack {
+    h4 {
+      font-size: 1.125rem;
+      margin-bottom: 16px;
+      margin-top: 24px;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+
+    .tech-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tech-tag {
+      padding: 8px 16px;
+      background: white;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: $dark;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+      &.expert {
+        background: linear-gradient(135deg, $primary, $secondary);
+        color: white;
+      }
+
+      &.advanced {
+        border: 1px solid $primary;
+        color: $primary;
+      }
+    }
+  }
+}

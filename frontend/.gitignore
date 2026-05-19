@@ -1,0 +1,46 @@
+# Angular
+/dist/
+/tmp/
+/out-tsc/
+/bazel-out/
+
+# Node.js
+/node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment
+.env
+.env.local
+.env.production
+
+# IDE
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+firebase-debug.log
+
+# Testing
+/coverage/
+/playwright-report/
+/test-report/
+
+# Build artifacts
+/.angular/
+/.nx/
+
+# Misc
+*.bak
+*.orig
+*~
