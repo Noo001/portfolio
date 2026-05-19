@@ -2,7 +2,10 @@
 
 Лендинг-презентация с формой обратной связи и AI-подсказкой. Тестовое задание для вакансии Fullstack-разработчик.
 
-## 🚀 Демо
+## 🌐 Демо
+
+- **Живой сайт:** https://noo001.github.io/portfolio/
+- **Backend API (Render):** https://portfolio-backend.onrender.com
 
 - **Frontend:** http://localhost:4200 (локально)
 - **Backend:** http://localhost:3000 (локально)
