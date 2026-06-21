@@ -1,0 +1,8 @@
+vendor/
+logs/*.log
+data/*.json
+.env
+.env.example
+.phpunit.result.cache
+Dockerfile
+.dockerignore

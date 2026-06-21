@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../components/header/header.component';
 import { AboutComponent } from '../components/about/about.component';
@@ -30,6 +30,7 @@ import { FooterComponent } from '../components/footer/footer.component';
     </main>
     <app-footer />
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [`
     main {
       overflow-x: hidden;

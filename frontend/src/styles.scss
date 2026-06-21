@@ -1,13 +1,4 @@
-// Переменные
-$primary: #3b82f6;
-$primary-dark: #2563eb;
-$secondary: #8b5cf6;
-$dark: #1e293b;
-$gray: #64748b;
-$light: #f8fafc;
-$white: #ffffff;
-$success: #10b981;
-$error: #ef4444;
+@use 'variables' as *;
 
 // Сброс стилей
 * {

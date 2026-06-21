@@ -1,3 +1,9 @@
-node_modules/
-.env
-*.log
+/vendor/
+/.env
+/logs/*.log
+/data/*.json
+/data/*.sqlite
+/data/*.sqlite3
+/composer.phar
+/.phpunit.result.cache
+/.phpunit.cache

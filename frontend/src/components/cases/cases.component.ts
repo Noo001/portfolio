@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 interface Case {
@@ -53,6 +53,7 @@ interface Case {
       </div>
     </section>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./cases.component.scss']
 })
 export class CasesComponent {

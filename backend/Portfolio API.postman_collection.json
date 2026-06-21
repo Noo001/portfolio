@@ -1,0 +1,86 @@
+{
+  "info": {
+    "name": "Portfolio Backend API",
+    "description": "API для лендинг-презентации разработчика",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/health",
+          "host": ["{{base_url}}"],
+          "path": ["api", "health"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Metrics",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/metrics",
+          "host": ["{{base_url}}"],
+          "path": ["api", "metrics"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Send Contact",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Иван Иванов\",\n  \"phone\": \"+7 999 123-45-67\",\n  \"email\": \"ivan@example.com\",\n  \"comment\": \"Хочу заказать разработку сайта\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/contact",
+          "host": ["{{base_url}}"],
+          "path": ["api", "contact"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "AI Suggest",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"text\": \"Хочу заказать сайт\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/ai-suggest",
+          "host": ["{{base_url}}"],
+          "path": ["api", "ai-suggest"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ]
+}

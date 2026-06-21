@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AiService {
   async getSuggestion(text: string): Promise<string> {
-    const response = await fetch('/api/ai-suggest', {
+    const response = await fetch(`${environment.apiBaseUrl}/ai-suggest`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

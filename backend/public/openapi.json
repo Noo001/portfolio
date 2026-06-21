@@ -1,0 +1,184 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Portfolio Backend API",
+    "description": "Backend API для лендинг-презентации разработчика с AI-интеграцией.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Portfolio Support"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Local development server"
+    }
+  ],
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "Проверка статуса сервиса",
+        "tags": ["Health"],
+        "responses": {
+          "200": {
+            "description": "Сервис работает",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/metrics": {
+      "get": {
+        "summary": "Статистика обращений",
+        "tags": ["Metrics"],
+        "responses": {
+          "200": {
+            "description": "Статистика получена",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetricsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/contact": {
+      "post": {
+        "summary": "Отправка сообщения через форму обратной связи",
+        "tags": ["Contact"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContactRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Сообщение принято",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContactResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Ошибка валидации"
+          },
+          "429": {
+            "description": "Слишком много запросов"
+          },
+          "500": {
+            "description": "Внутренняя ошибка сервера"
+          }
+        }
+      }
+    },
+    "/api/ai-suggest": {
+      "post": {
+        "summary": "AI-генерация ответа на текст",
+        "tags": ["AI"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AiSuggestRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ответ сгенерирован",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiSuggestResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Текст не предоставлен"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HealthResponse": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "example": "ok" },
+          "service": { "type": "string" },
+          "timestamp": { "type": "string", "format": "date-time" },
+          "version": { "type": "string" }
+        }
+      },
+      "MetricsResponse": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "object",
+            "additionalProperties": { "type": "integer" }
+          },
+          "timestamp": { "type": "string", "format": "date-time" }
+        }
+      },
+      "ContactRequest": {
+        "type": "object",
+        "required": ["name", "phone", "email", "comment"],
+        "properties": {
+          "name": { "type": "string", "example": "Иван Иванов" },
+          "phone": { "type": "string", "example": "+7 999 123-45-67" },
+          "email": { "type": "string", "format": "email" },
+          "comment": { "type": "string", "example": "Хочу заказать разработку сайта" }
+        }
+      },
+      "ContactResponse": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean" },
+          "message": { "type": "string" },
+          "sentiment": {
+            "type": "object",
+            "properties": {
+              "sentiment": { "type": "string", "enum": ["positive", "neutral", "negative"] },
+              "confidence": { "type": "number" }
+            }
+          }
+        }
+      },
+      "AiSuggestRequest": {
+        "type": "object",
+        "required": ["text"],
+        "properties": {
+          "text": { "type": "string" }
+        }
+      },
+      "AiSuggestResponse": {
+        "type": "object",
+        "properties": {
+          "suggestion": { "type": "string" },
+          "fallback": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

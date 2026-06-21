@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: portfolio-backend
+    runtime: docker
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: DATABASE_PATH
+        value: /var/www/html/data/portfolio.sqlite
+      - key: FRONTEND_URL
+        value: https://noo001.github.io
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        value: 587
+      - key: SMTP_USERNAME
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: SMTP_FROM_EMAIL
+        sync: false
+      - key: SMTP_FROM_NAME
+        value: "Portfolio Site"
+      - key: OWNER_EMAIL
+        sync: false
+      - key: AI_PROVIDER
+        value: stub
+      - key: AI_API_KEY
+        sync: false
+      - key: AI_MODEL
+        value: gpt-4o-mini
+      - key: RATE_LIMIT_MAX
+        value: 5
+      - key: RATE_LIMIT_WINDOW
+        value: 60

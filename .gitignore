@@ -5,11 +5,16 @@ frontend/.angular/
 frontend/.env
 frontend/.env.local
 
-# Backend (Node.js)
-backend/node_modules/
+# Backend (PHP)
+backend/vendor/
+backend/logs/*.log
+backend/data/*.json
 backend/.env
-backend/messages.log
-backend/*.log
+backend/.phpunit.result.cache
+backend/.phpunit.cache
+
+# Локальные инструменты (PHP portable)
+tools/
 
 # Общее
 .DS_Store

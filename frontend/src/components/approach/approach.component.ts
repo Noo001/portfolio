@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -50,6 +50,7 @@ import { CommonModule } from '@angular/common';
       </div>
     </section>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./approach.component.scss']
 })
 export class ApproachComponent {}

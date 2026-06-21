@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../environments/environment';
 
 export interface ContactData {
   name: string;
@@ -12,7 +13,7 @@ export interface ContactData {
 })
 export class ContactService {
   async sendMessage(data: ContactData): Promise<any> {
-    const response = await fetch('/api/send-message', {
+    const response = await fetch(`${environment.apiBaseUrl}/contact`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

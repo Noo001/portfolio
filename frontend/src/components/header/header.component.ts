@@ -1,4 +1,4 @@
-import { Component, signal, HostListener } from '@angular/core';
+import { Component, signal, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -32,6 +32,7 @@ import { CommonModule } from '@angular/common';
       </div>
     </header>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
