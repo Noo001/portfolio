@@ -306,6 +306,15 @@ Controllers → Services → Repositories
 
 ## 🧪 Тестирование
 
+В проекте реализованы unit-тесты для ключевых компонентов backend:
+
+- `ValidatorTest` — валидация входных данных
+- `ContactServiceTest` — обработка формы обратной связи, санитизация, метрики
+- `EmailServiceTest` — поведение при не настроенном SMTP
+- `RateLimitServiceTest` — защита от спама
+- `MetricsServiceTest` — сбор статистики
+- `StubAiServiceTest` — AI fallback
+
 ```bash
 cd backend
 composer test
